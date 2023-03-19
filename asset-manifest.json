@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/genderAssighment/static/css/main.32395d35.css",
+    "main.js": "/genderAssighment/static/js/main.342a2f00.js",
+    "index.html": "/genderAssighment/index.html",
+    "main.32395d35.css.map": "/genderAssighment/static/css/main.32395d35.css.map",
+    "main.342a2f00.js.map": "/genderAssighment/static/js/main.342a2f00.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.32395d35.css",
+    "static/js/main.342a2f00.js"
+  ]
+}
