@@ -1,4 +1,5 @@
 # Getting Started with Create React App
+## Link to [Github Pages](https://miaraylight.github.io/genderAssignment/)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
