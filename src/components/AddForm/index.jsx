@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import UserCard from '../UserCard'
+import UserCard from '../components/UserCard'
 import s from './style.module.css'
 
 
