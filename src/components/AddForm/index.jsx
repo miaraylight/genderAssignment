@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
 import UserCard from '../components/UserCard'
 import s from './style.module.css'
 
@@ -8,6 +9,7 @@ export default function AddForm() {
     const [data, setData] = useState([])
     const [girls, setGirls] = useState()
     const [guys, setGuys] = useState()
+    const dispatch = useDispatch()
 
     const handleSubmit = (e) => {
         e.preventDefault()
