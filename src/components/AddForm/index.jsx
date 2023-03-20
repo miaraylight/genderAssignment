@@ -1,33 +1,29 @@
 import React, { useEffect, useState } from 'react'
-import { useDispatch } from 'react-redux'
-import UserCard from '../components/UserCard'
+import { useDispatch, useSelector } from 'react-redux'
+import UserCard from '../UserCard'
 import s from './style.module.css'
 
 
 export default function AddForm() {
 
-    const [data, setData] = useState([])
-    const [girls, setGirls] = useState()
-    const [guys, setGuys] = useState()
+    // const [data, setData] = useState([])
+
     const dispatch = useDispatch()
+    const data = useSelector(state => state)
+    console.log(data);
+
 
     const handleSubmit = (e) => {
         e.preventDefault()
         const {name, url, gender} = e.target;
-        setData([...data, {id: Date.now(),name: name.value, url: url.value, gender: gender.value}])
+        const user = {id: Date.now(),name: name.value, url: url.value, gender: gender.value}
+        dispatch({type: 'ADD', payload: user})
+        // setData([...data, {id: Date.now(),name: name.value, url: url.value, gender: gender.value}])
         name.value = ""
         url.value = ""
         gender.value= ""
     }
 
-    useEffect(() => {
-        if (data === []) {
-            return
-        }else{
-            setGuys(data.filter(({gender}) => gender === "Male"))
-            setGirls(data.filter(({gender}) => gender === "Female"))
-        }
-    }, [data])
 
   return (
     <div>
@@ -47,7 +43,7 @@ export default function AddForm() {
             <h2>Guys</h2>
            <div className={s.content}>
            {
-            guys===undefined ? <p>no data</p> : guys.map(elem => <UserCard key={elem.id} {...elem}/>)
+            data.filter(({gender}) => gender === "Male").map(elem => <UserCard key={elem.id} {...elem}  />)
            }
            </div>
         </div>
@@ -55,7 +51,7 @@ export default function AddForm() {
         <h2>Girls</h2>
         <div className={s.content}>
            {
-            girls===undefined ? <p>no data</p> : girls.map(elem => <UserCard key={elem.id} {...elem}/>)
+            data.filter(({gender}) => gender === "Female").map(elem => <UserCard key={elem.id} {...elem}  />)
            }
         </div>
         </div>

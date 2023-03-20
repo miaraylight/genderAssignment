@@ -1,4 +1,5 @@
-import AddForm from "../../AddForm";
+
+import AddForm from '../AddForm';
 import './App.css'
 
 
